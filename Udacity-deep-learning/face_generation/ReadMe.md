@@ -1,0 +1,1 @@
+The images generated are pretty noisy and are all look very similar. I don't know why they're that kind of noisy, but for the similarity, I think it may be because the real images in a batch are not very random. I also tried to add minibatch discrimination to the discriminator, the result improving, but not that kind of dramatically.
