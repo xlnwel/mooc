@@ -536,18 +536,18 @@ def train_AC(
             if dm == 'ex2':
                 ### PROBLEM 3
                 ### YOUR CODE HERE
-                raise NotImplementedError
+                ll, kl, elbo = exploration.fit_density_model(ob_no)
             elif dm == 'hist' or dm == 'rbf':
                 ### PROBLEM 1
                 ### YOUR CODE HERE
-                raise NotImplementedError
+                exploration.fit_density_model(ob_no)
             else:
                 assert False
 
             # 2. Modify the reward
             ### PROBLEM 1
             ### YOUR CODE HERE
-            raise NotImplementedError
+            re_n = exploration.modify_reward(old_re_n, ob_no)
 
             print('average state', np.mean(ob_no, axis=0))
             print('average action', np.mean(ac_na, axis=0))
@@ -581,6 +581,7 @@ def train_AC(
         logz.log_tabular("Unmodified Rewards Std", np.mean(old_re_n))
         logz.log_tabular("Modified Rewards Mean", np.mean(re_n))
         logz.log_tabular("Modified Rewards Std", np.mean(re_n))
+        logz.log_tabular("RewardDifference", np.mean(re_n) - np.mean(old_re_n))
         if dm == 'ex2':
             logz.log_tabular("Log Likelihood Mean", np.mean(ll))
             logz.log_tabular("Log Likelihood Std", np.std(ll))
