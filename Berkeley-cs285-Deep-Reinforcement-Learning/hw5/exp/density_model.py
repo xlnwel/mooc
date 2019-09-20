@@ -295,13 +295,13 @@ class Exemplar(Density_Model):
                 https://www.tensorflow.org/probability/api_docs/python/tfp/distributions
         """
         # Reuse
-        make_encoder1 = tf.make_template('encoder1', self.make_encoder)
-        make_encoder2 = tf.make_template('encoder2', self.make_encoder)
+        make_encoder1 = tf.make_template('encoder', self.make_encoder)
+        make_encoder2 = tf.make_template('encoder', self.make_encoder)
         make_discriminator = tf.make_template('decoder', self.make_discriminator)
 
         # Encoder
-        encoder1 = make_encoder1(state1, self.hid_dim/2, 'z1', n_layers=2, hid_size=self.hid_dim)
-        encoder2 = make_encoder2(state2, self.hid_dim/2, 'z2', n_layers=2, hid_size=self.hid_dim)
+        encoder1 = make_encoder1(state1, self.hid_dim/2, 'z', 2, self.hid_dim)
+        encoder2 = make_encoder2(state2, self.hid_dim/2, 'z', 2, self.hid_dim)
 
         # Prior
         prior = self.make_prior(self.hid_dim/2)
@@ -312,7 +312,7 @@ class Exemplar(Density_Model):
         z = tf.concat([z1, z2], axis=1)
 
         # Discriminator
-        discriminator = make_discriminator(z, 1, 'discriminator', n_layers=2, hid_size=self.hid_dim)
+        discriminator = make_discriminator(z, 1, 'discriminator', 2, self.hid_dim)
         return encoder1, encoder2, prior, discriminator
 
     def update(self, state1, state2, target):
@@ -357,9 +357,11 @@ class Exemplar(Density_Model):
         assert state1.shape[1] == state2.shape[1] == self.ob_dim
         assert state1.shape[0] == state2.shape[0]
         
+        discrim_target = np.sum(state1 == state2, axis=1)
+        discrim_target = np.where(discrim_target == self.ob_dim, 1, 0)
         likelihood = self.sess.run([self.likelihood],
                                     feed_dict={self.state1: state1, self.state2: state2, 
-                                                self.discrim_target: np.ones([state1.shape[0], 1])})
+                                                self.discrim_target: discrim_target})
         return likelihood
 
     def get_prob(self, state):
