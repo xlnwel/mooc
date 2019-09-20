@@ -196,8 +196,8 @@ class Exemplar(Density_Model):
         self.encoder1, self.encoder2, self.prior, self.discriminator = self.forward_pass(self.state1, self.state2)
         self.discrim_target = tf.placeholder(shape=[None, 1], name="discrim_target", dtype=tf.float32)
 
-        self.log_likelihood = tf.squeeze(self.discriminator.log_prob(self.discrim_target))
-        self.likelihood = tf.squeeze(self.discriminator.prob(self.discrim_target))
+        self.log_likelihood = tf.squeeze(self.discriminator.log_prob(self.discrim_target), axis=1)
+        self.likelihood = tf.squeeze(self.discriminator.prob(self.discrim_target), axis=1)
         self.kl = tfp.distributions.kl_divergence(self.encoder1, self.prior) + tfp.distributions.kl_divergence(self.encoder2, self.prior)
         assert len(self.log_likelihood.shape) == len(self.likelihood.shape) == len(self.kl.shape) == 1
 
@@ -357,7 +357,7 @@ class Exemplar(Density_Model):
         assert state1.shape[1] == state2.shape[1] == self.ob_dim
         assert state1.shape[0] == state2.shape[0]
         
-        discrim_target = np.sum(state1 == state2, axis=1)
+        discrim_target = np.sum(state1 == state2, axis=1, keepdims=True)
         discrim_target = np.where(discrim_target == self.ob_dim, 1, 0)
         likelihood = self.sess.run([self.likelihood],
                                     feed_dict={self.state1: state1, self.state2: state2, 
