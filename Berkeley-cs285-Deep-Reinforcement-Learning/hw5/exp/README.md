@@ -1,12 +1,22 @@
+## Experimental Results
+
+### PointMass:
+
 <p align="center">
 <img src="data/PM.png" alt="" height="350">
 </p>
 
+This shows Ex2 outperforms the rest. Also adding exploration strategy help reduce variance.
+
+### HalfCheetah-v2
+
 <p align="center">
-<img src="/data/HC.png" alt="" height="350">
+<img src="data/HC.png" alt="" height="350">
 </p>
 
-# CS294-112 HW 5a: Exploration
+Since it's a dense reward environment, Ex2 does not help much 
+
+## CS294-112 HW 5a: Exploration
 
 Dependencies:
  * Python **3.5**

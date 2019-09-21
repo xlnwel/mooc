@@ -3,5 +3,5 @@ These are projects I've done during the course of learning AI. Most materials ar
 ## Certificate
 
 <p align="center">
-<img src="/AIND.png" alt="AIND" height="350">
+<img src="certificate.png" alt="AIND" height="350">
 </p>

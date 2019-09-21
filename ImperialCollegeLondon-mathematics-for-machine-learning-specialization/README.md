@@ -5,6 +5,6 @@ Mathematics for Machine Learning Specialization by Imperial College London. [Cou
 https://www.coursera.org/account/accomplishments/specialization/TJREHMPNJDC9
 
 <p align="center">
-<img src="/certificate.pdf" alt="certificate" height="350">
+<img src="certificate.pdf" alt="certificate" height="350">
 </p>
 
