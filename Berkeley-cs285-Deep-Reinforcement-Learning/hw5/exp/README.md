@@ -1,3 +1,11 @@
+<p align="center">
+<img src="data/PM.png" alt="" height="350">
+</p>
+
+<p align="center">
+<img src="/data/HC.png" alt="" height="350">
+</p>
+
 # CS294-112 HW 5a: Exploration
 
 Dependencies:
