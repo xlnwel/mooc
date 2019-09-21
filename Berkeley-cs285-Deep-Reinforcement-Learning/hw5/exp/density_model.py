@@ -150,7 +150,7 @@ class RBF(Density_Model):
             assert euc_dists.shape == (b, B)
 
             # Gaussian
-            gaussians = np.exp(-euc_dists / (2 * self.sigma))
+            gaussians = np.exp(-euc_dists / (2 * self.sigma**2))
             assert gaussians.shape == (b, B)
 
             # 4. Average
