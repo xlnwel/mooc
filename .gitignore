@@ -1,3 +1,5 @@
 .DS**
 **.vscode**
-
+.**
+**__pycache__**
+**.pyc
