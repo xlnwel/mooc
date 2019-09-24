@@ -27,8 +27,22 @@ class PointEnv(Env):
         #                           ----------PROBLEM 3----------
         #====================================================================================#
         # YOUR CODE HERE
-        x = np.random.uniform(-10, 10)
-        y = np.random.uniform(-10, 10)
+        # e.g. a 4X4 grid looks like
+        # T F T F
+        # F T F T
+        # T F T F
+        # F T F T
+        # where T is evaluation, F is training
+        grid = np.arange(-10, 10)
+        xi = np.random.randint(0, 20)
+        if is_evaluation:
+            yi = (xi + 2 * np.random.randint(0, 10)) % 20
+        else:
+            yi = (xi + 2 * np.random.randint(0, 10) + 1) % 20
+
+        x0, y0 = grid[xi], grid[yi]
+        x = np.random.uniform(x0, x0+1)
+        y = np.random.uniform(y0, y0+1)
         self._goal = np.array([x, y])
 
     def reset(self):

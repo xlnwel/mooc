@@ -1,3 +1,13 @@
+## Experimental Results
+
+Q1 and Q2 are trivial, we here only present the reuslts of Q3
+
+### Q3:
+
+<p align="center">
+<img src="data/q3.png" alt="" height="350">
+</p>
+
 # CS294-112 HW 5c: Meta-Learning
 
 Dependencies:

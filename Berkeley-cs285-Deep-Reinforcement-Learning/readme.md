@@ -1,10 +1,8 @@
+For the implementation of SAC, see [this repo](https://github.com/xlnwel/model-free-algorithms/tree/master/algo/off_policy/sac)
+
 ## Anouncement
 
 This folder contains homeworks of cs294-112 in 2018 fall from UC Berkeley. 
-
-
-
-For SAC, see [this repo](https://github.com/xlnwel/model-free-algorithms/tree/master/algo/off_policy/sac)
 
 ## Official Website
 

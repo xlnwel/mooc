@@ -357,11 +357,9 @@ class Exemplar(Density_Model):
         assert state1.shape[1] == state2.shape[1] == self.ob_dim
         assert state1.shape[0] == state2.shape[0]
         
-        discrim_target = np.sum(state1 == state2, axis=1, keepdims=True)
-        discrim_target = np.where(discrim_target == self.ob_dim, 1, 0)
         likelihood = self.sess.run([self.likelihood],
                                     feed_dict={self.state1: state1, self.state2: state2, 
-                                                self.discrim_target: discrim_target})
+                                                self.discrim_target: np.ones(self.state1[0])[:, None]})
         return likelihood
 
     def get_prob(self, state):
