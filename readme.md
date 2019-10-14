@@ -1,4 +1,4 @@
-# Massive Open Online Courses I'v taken (Alphabetical order)
+# Massive Open Online Courses I'v taken
 
 Berkeley: cs285 Deep Reinforcement Learning(originally cs294-112). [course website](http://rail.eecs.berkeley.edu/deeprlcourse-fa18/)
 
