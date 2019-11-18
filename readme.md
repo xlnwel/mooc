@@ -1,6 +1,4 @@
-# Massive Open Online Courses I'v taken
-
-**For those I earn a certificate, I only put the certificate here.**
+我上过的网上的公开课即相关证书, 对于那些获取了证书的课程我没有附加相关项目.
 
 Berkeley: cs285 Deep Reinforcement Learning(originally cs294-112). [course website](http://rail.eecs.berkeley.edu/deeprlcourse-fa18/) [folder](/Berkeley-cs285-Deep-Reinforcement-Learning)
 
