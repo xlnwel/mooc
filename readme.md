@@ -1,4 +1,5 @@
-我上过的网上的公开课即相关证书, 对于那些获取了证书的课程我没有附加相关项目.
+**Online Courses I took**
+
 
 Berkeley: cs285 Deep Reinforcement Learning(originally cs294-112). [course website](http://rail.eecs.berkeley.edu/deeprlcourse-fa18/) [folder](/Berkeley-cs285-Deep-Reinforcement-Learning)
 
@@ -15,6 +16,9 @@ Udacity: Deep Learning. [course website](https://www.udacity.com/course/deep-lea
 Udacity: Deep Reinforcement Learning. [course website](https://www.udacity.com/course/deep-reinforcement-learning-nanodegree--nd893) [folder](/Udacity-Deep-Reinforcement-Learning)
 
 Michigan: Applied Data Science with Python Specialization [course website](https://www.coursera.org/specializations/data-science-python) [folder](/Michigan-Applied-Data-Science-with-Python-Specialization)
+
 UCL David Silver: [course website](http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html)
 
 Open AI: Deep RL Bootcamp [course website](https://www.youtube.com/playlist?list=PLAdk-EyP1ND8MqJEJnSvaoUShrAWYe51U)
+
+University of Copenhagen & Technical University of Denmark: Academic Information Seeking [course website](https://www.coursera.org/learn/academicinfoseek/home)
